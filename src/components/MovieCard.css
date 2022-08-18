@@ -1,10 +1,11 @@
 .movieImage {
-  height: auto;
   max-width: 100%;
+  height: auto;
 }
 
 .movie-card {
   position: relative;
+  margin: 5px;
 }
 
 .ratings {

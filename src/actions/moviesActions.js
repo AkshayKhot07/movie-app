@@ -18,7 +18,7 @@ export const getMoviesFailure = () => ({
 
 //combine them all in async thunk
 
-export function fetchMovies() {
+export function fetchPopularMovies() {
   return async (dispatch) => {
     dispatch(getMovies());
 

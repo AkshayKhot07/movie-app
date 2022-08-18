@@ -1,3 +1,9 @@
+.movies-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
 .controls {
   position: relative;
 }
@@ -24,4 +30,16 @@
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.3);
   display: flex;
+}
+
+.popular-movies-container {
+  max-width: 80%;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+.toprated-movies-container {
+  max-width: 80%;
+  margin: 0 auto;
+  border: 1px solid black;
 }

@@ -1,9 +1,11 @@
 import { combineReducers } from "redux";
 
-import moviesReducer from "./moviesReducer";
+import moviesPopularReducer from "./moviesReducer"; // popular movies
+import moviesTopratedReducer from "./topratedMoviesReducer"; //toprated movies
 
 const rootReducer = combineReducers({
-  movies: moviesReducer,
+  popularmovies: moviesPopularReducer,
+  topratedmovies: moviesTopratedReducer,
 });
 
 export default rootReducer;
