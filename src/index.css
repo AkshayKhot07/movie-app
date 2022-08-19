@@ -1,3 +1,13 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+body,
+button,
+input,
+textarea {
+  font-family: "Poppins";
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -21,4 +31,36 @@ button {
 img {
   max-width: 100%;
   height: auto;
+}
+
+/* html {
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  flex-grow: 1;
+} */
+
+/* html,
+body {
+  min-height: 100%;
+}
+
+body {
+  height: 100vh;
+} */
+
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+}
+
+html,
+body {
+  overflow: auto;
 }

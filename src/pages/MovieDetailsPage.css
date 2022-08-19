@@ -1,0 +1,153 @@
+.movie-details-container {
+  background-color: black;
+  color: white;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+
+  position: relative;
+}
+
+.bg-cover {
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-height: 300px;
+
+  position: relative;
+}
+
+.moviePosterImage {
+  width: 185px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.movie-poster-trailer-title-genres {
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-poster-trailer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.movie-trailer span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  column-gap: 20px;
+  height: max-content;
+  width: max-content;
+  padding: 10px 20px;
+  background-color: rgb(81, 121, 255);
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.ri-play-fill {
+  font-size: 20px;
+}
+
+.movie-trailer span p {
+  letter-spacing: -1px;
+}
+
+.movie-title-genres {
+  margin-left: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.movie-title {
+  font-size: 45px;
+  line-height: 1.25;
+}
+
+.movie-genres {
+  display: flex;
+  column-gap: 10px;
+  margin-top: 10px;
+}
+
+.movie-genres p {
+  padding: 5px 10px;
+  border: 1px solid white;
+  border-radius: 20px;
+}
+
+.mtod-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rem;
+}
+
+.movie-tagline-overview-details {
+  padding: 8rem 20px 20px 20px;
+}
+
+.movie-tagline {
+  font-style: italic;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.movie-overview h4,
+.movie-details h4,
+.movie-rating-runtime h4 {
+  font-weight: 500;
+}
+
+.movie-overview p {
+  padding: 20px 0px;
+  color: #757575;
+  font-weight: 500;
+}
+
+.movie-details ul {
+  padding: 20px 0px;
+}
+
+.movie-details li {
+  color: #757575;
+  font-weight: 500;
+}
+
+.movie-rating-runtime {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 50px;
+}
+
+.movie-rating,
+.movie-runtime {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movie-runtime h4,
+.movie-rating h4 {
+  font-size: 1.2rem;
+}
+
+.movie-rating-runtime p {
+  color: #757575;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 460px) {
+  .movie-poster-trailer-title-genres {
+    position: relative;
+    bottom: 1.5rem;
+  }
+}

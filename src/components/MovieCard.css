@@ -23,3 +23,9 @@
   bottom: 5px;
   left: 5px;
 }
+
+@media screen and (max-width: 600px) {
+  .ratings {
+    font-size: 10px;
+  }
+}

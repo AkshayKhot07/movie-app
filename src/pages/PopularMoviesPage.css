@@ -1,0 +1,37 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+.allPopularMovies-container {
+  display: grid;
+  grid-template-columns: auto;
+  width: 70%;
+  margin: 20px auto;
+  row-gap: 10px;
+}
+
+.popular-movies-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.pagination-container {
+  display: flex;
+  column-gap: 10px;
+  grid-row: 2;
+  grid-column: 1;
+  justify-content: end;
+  align-items: center;
+}
+
+.pagination-container button {
+  background-color: darkgray;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.pagination-container .page-number {
+  font-weight: 600;
+}
