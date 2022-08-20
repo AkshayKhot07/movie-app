@@ -7,6 +7,7 @@ import PopularMoviesPage from "./pages/PopularMoviesPage";
 import TopratedMoviesPage from "./pages/TopratedMoviesPage";
 import NowplayingMoviesPage from "./pages/NowplayingMoviesPage";
 import UpcomingMoviesPage from "./pages/UpcomingMoviesPage";
+import SearchMovies from "./pages/SearchMovies";
 
 import Navbar from "./components/Navbar";
 
@@ -31,6 +32,7 @@ export default function App() {
             path="/upcomingmovies/"
             element={<UpcomingMoviesPage />}
           ></Route>
+          <Route path="/search" element={<SearchMovies />}></Route>
         </Routes>
       </Router>
     </div>

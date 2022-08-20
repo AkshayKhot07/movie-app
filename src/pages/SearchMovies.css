@@ -1,0 +1,17 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+.search-movies-container {
+  display: grid;
+  grid-template-columns: auto;
+  width: 70%;
+  margin: 20px auto;
+  row-gap: 10px;
+}
+
+.search-movies-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}

@@ -10,7 +10,7 @@ export default function Navbar() {
       <ul className="navbar-container">
         <Link to="/">
           <li className="navbar-logo">
-            <i class="ri-movie-2-fill"></i>
+            <i className="ri-movie-2-fill"></i>
             <span>The Movie App</span>
           </li>
         </Link>
