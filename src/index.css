@@ -33,6 +33,11 @@ img {
   height: auto;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 /* html {
   min-height: 100%;
 

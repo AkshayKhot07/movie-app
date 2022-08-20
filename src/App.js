@@ -8,20 +8,31 @@ import TopratedMoviesPage from "./pages/TopratedMoviesPage";
 import NowplayingMoviesPage from "./pages/NowplayingMoviesPage";
 import UpcomingMoviesPage from "./pages/UpcomingMoviesPage";
 
+import Navbar from "./components/Navbar";
+
 export default function App() {
   return (
-    <Router>
-      <Routes>
-        <Route exact path="/" element={<MoviesPage />}></Route>
-        <Route path="/movie/:id" element={<MovieDetailsPage />}></Route>
-        <Route path="/popularmovies/" element={<PopularMoviesPage />}></Route>
-        <Route path="/topratedmovies/" element={<TopratedMoviesPage />}></Route>
-        <Route
-          path="/nowplayingmovies/"
-          element={<NowplayingMoviesPage />}
-        ></Route>
-        <Route path="/upcomingmovies/" element={<UpcomingMoviesPage />}></Route>
-      </Routes>
-    </Router>
+    <div className="App">
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route exact path="/" element={<MoviesPage />}></Route>
+          <Route path="/movie/:id" element={<MovieDetailsPage />}></Route>
+          <Route path="/popularmovies/" element={<PopularMoviesPage />}></Route>
+          <Route
+            path="/topratedmovies/"
+            element={<TopratedMoviesPage />}
+          ></Route>
+          <Route
+            path="/nowplayingmovies/"
+            element={<NowplayingMoviesPage />}
+          ></Route>
+          <Route
+            path="/upcomingmovies/"
+            element={<UpcomingMoviesPage />}
+          ></Route>
+        </Routes>
+      </Router>
+    </div>
   );
 }
