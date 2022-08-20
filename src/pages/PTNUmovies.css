@@ -3,7 +3,7 @@ body {
   color: white;
 }
 
-.allPopularMovies-container {
+.ptnu-container {
   display: grid;
   grid-template-columns: auto;
   width: 70%;
@@ -11,7 +11,7 @@ body {
   row-gap: 10px;
 }
 
-.popular-movies-grid {
+.ptnu-movies-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }

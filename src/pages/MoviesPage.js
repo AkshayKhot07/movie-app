@@ -151,7 +151,7 @@ const MoviesPage = ({
         <h3>
           Popular
           <span className="see-more">
-            <a href="/popularmovies">
+            <a href="/popularmovies/">
               <small>{`See more >`}</small>
             </a>
           </span>
@@ -179,7 +179,7 @@ const MoviesPage = ({
         <h3>
           Top Rated
           <span className="see-more">
-            <a href="#">
+            <a href="/topratedmovies/">
               <small>{`See more >`}</small>
             </a>
           </span>
@@ -207,7 +207,7 @@ const MoviesPage = ({
         <h3>
           Now Playing
           <span className="see-more">
-            <a href="#">
+            <a href="/nowplayingmovies/">
               <small>{`See more >`}</small>
             </a>
           </span>
@@ -235,7 +235,7 @@ const MoviesPage = ({
         <h3>
           Up Coming
           <span className="see-more">
-            <a href="#">
+            <a href="/upcomingmovies/">
               <small>{`See more >`}</small>
             </a>
           </span>
