@@ -57,8 +57,16 @@ export default function MovieDetailsPage() {
               <div className="movie-title-genres">
                 <h1 className="movie-title">{movieDetails.title}</h1>
                 <div className="movie-genres">
-                  <p>{movieDetails.genres[0].name}</p>
-                  <p>{movieDetails.genres[1].name}</p>
+                  <p>
+                    {movieDetails.genres[0]
+                      ? movieDetails.genres[0].name
+                      : `NA`}
+                  </p>
+                  <p>
+                    {movieDetails.genres[1]
+                      ? movieDetails.genres[1].name
+                      : `NA`}
+                  </p>
                 </div>
               </div>
             </div>
@@ -77,7 +85,10 @@ export default function MovieDetailsPage() {
                   <li>Status: {movieDetails.status}</li>
                   <li>Release date: {movieDetails.release_date}</li>
                   <li>
-                    Spoken language: {movieDetails.spoken_languages[0].name}
+                    Spoken language:{" "}
+                    {movieDetails.spoken_languages[0]
+                      ? movieDetails.spoken_languages[0].name
+                      : `NA`}
                   </li>
                 </ul>
               </div>

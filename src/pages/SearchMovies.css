@@ -15,3 +15,16 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
+
+.search-pagination {
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 5px;
+}
+
+.search-pagination li {
+  background-color: darkgray;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}

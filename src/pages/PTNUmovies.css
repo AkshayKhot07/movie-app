@@ -6,7 +6,7 @@ body {
 .ptnu-container {
   display: grid;
   grid-template-columns: auto;
-  width: 70%;
+  max-width: 80%;
   margin: 20px auto;
   row-gap: 10px;
 }
