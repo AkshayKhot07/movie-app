@@ -7,13 +7,13 @@ body {
   display: grid;
   grid-template-columns: auto;
   max-width: 80%;
-  margin: 20px auto;
+  margin: 100px auto 50px;
   row-gap: 10px;
 }
 
 .ptnu-movies-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 
 .pagination-container {

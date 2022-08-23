@@ -132,7 +132,7 @@ const MoviesPage = ({
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 500,
         settings: {
           arrows: false,
           dots: false,
@@ -148,7 +148,7 @@ const MoviesPage = ({
   return (
     <div className="movies-container">
       <div className="popular-movies-container">
-        <h3>
+        <h3 className="movie-header">
           Popular
           <span className="see-more">
             <a href="/popularmovies/">
@@ -176,7 +176,7 @@ const MoviesPage = ({
       </div>
 
       <div className="toprated-movies-container">
-        <h3>
+        <h3 className="movie-header">
           Top Rated
           <span className="see-more">
             <a href="/topratedmovies/">
@@ -204,7 +204,7 @@ const MoviesPage = ({
       </div>
 
       <div className="nowplaying-movies-container">
-        <h3>
+        <h3 className="movie-header">
           Now Playing
           <span className="see-more">
             <a href="/nowplayingmovies/">
@@ -232,7 +232,7 @@ const MoviesPage = ({
       </div>
 
       <div className="upcomingmovies-container">
-        <h3>
+        <h3 className="movie-header">
           Up Coming
           <span className="see-more">
             <a href="/upcomingmovies/">

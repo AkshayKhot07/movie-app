@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 10px;
-  margin: 10px 0;
+  margin: 100px 0 50px 0;
 }
 
 .controls {
@@ -45,4 +45,14 @@
 .see-more {
   margin-left: 10px;
   font-size: 15px;
+}
+
+.see-more small {
+  color: lightgray;
+  font-weight: 500;
+}
+
+.movie-header {
+  font-weight: 500;
+  margin-bottom: 10px;
 }

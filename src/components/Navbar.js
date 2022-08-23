@@ -14,7 +14,7 @@ export default function Navbar() {
             <span>The Movie App</span>
           </li>
         </Link>
-        <li>
+        <li className="nav-searchbar">
           <Searchbar />
         </li>
       </ul>

@@ -7,33 +7,43 @@ const API_KEY = "f3076c4a5a1999ec752596ae43fc689e";
 
 const Pagination = ({ booksPerPage, booksAmount, paginate }) => {
   const pageNumbers = [];
-
   for (let i = 1; i <= Math.ceil(booksAmount / booksPerPage); i++) {
     pageNumbers.push(i);
   }
 
+  useEffect(() => {
+    const ul = document.querySelector(".search-pagination");
+    const allLi = Array.from(ul.querySelectorAll("li"));
+    allLi.forEach((li) => {
+      if (li) li.classList.remove("active-page");
+    });
+
+    const firstLi = Array.from(ul.querySelectorAll("li"))[0];
+    if (firstLi) {
+      firstLi.classList.add("active-page");
+    }
+  }, [booksAmount]);
+
   return (
     <div className="container-mt-5">
-      <nav>
-        <ul className="search-pagination">
-          {pageNumbers.slice(0, 20).map((number) => {
-            return (
-              <li className="page-item" key={number}>
-                <a
-                  href="!#"
-                  onClick={(e) => {
-                    paginate(number);
-                    e.preventDefault();
-                  }}
-                  className="page-link"
-                >
-                  {number}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
+      <ul className="search-pagination">
+        {pageNumbers.slice(0, 20).map((number) => {
+          return (
+            <li className="page-item" key={number}>
+              <a
+                href="!#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  paginate(e, number);
+                }}
+                className="page-link"
+              >
+                {number}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };
@@ -53,8 +63,17 @@ export default function SearchMovies() {
   const query = queryParams.get("q");
 
   //pagination
-  const paginate = (pageNumber) => {
-    console.log("paginate function", pageNumber);
+  const paginate = (e, pageNumber) => {
+    e.target.parentNode.classList.add("active-page");
+    const ul = e.target.parentNode.parentNode;
+    const allLi = Array.from(ul.querySelectorAll("li"));
+    console.log(allLi);
+    allLi.forEach((li) => {
+      if (li.innerText !== `${pageNumber}`) {
+        li.classList.remove("active-page");
+      }
+    });
+
     setPage(pageNumber);
   };
 
