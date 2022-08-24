@@ -69,3 +69,13 @@ html,
 body {
   overflow: auto;
 }
+
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: whitesmoke;
+  border-radius: 0.5rem;
+}

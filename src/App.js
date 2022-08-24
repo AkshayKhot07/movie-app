@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import MoviesPage from "./pages/MoviesPage";
@@ -10,6 +10,7 @@ import UpcomingMoviesPage from "./pages/UpcomingMoviesPage";
 import SearchMovies from "./pages/SearchMovies";
 
 import Navbar from "./components/Navbar";
+import LoadingPage from "./components/LoadingPage";
 
 export default function App() {
   return (

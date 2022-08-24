@@ -35,3 +35,21 @@ body {
 .pagination-container .page-number {
   font-weight: 600;
 }
+
+@media screen and (min-width: 992px) {
+  .ptnu-movies-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .ptnu-movies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  .ptnu-movies-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

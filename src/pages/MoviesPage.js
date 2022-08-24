@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { MovieCard } from "../components/MovieCard";
 
+import LoadingPage from "../components/LoadingPage";
+
 //actions
 import { fetchPopularMovies } from "../actions/moviesActions";
 import { fetchTopratedMovies } from "../actions/topratedMoviesAction";
@@ -37,6 +39,13 @@ const MoviesPage = ({
   const [trmSliderRef, setTrmSliderRef] = useState(null);
   const [nowplayingSliderRef, setNowplayingSliderRef] = useState(null);
   const [upcomingSliderRef, setUpcomingSliderRef] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 5000);
+  }, []);
 
   useEffect(() => {
     dispatch(fetchPopularMovies());
@@ -46,7 +55,7 @@ const MoviesPage = ({
   }, [dispatch]);
 
   const renderPopularMovies = () => {
-    if (popularmoviesloading) return <p>Loading movies...</p>;
+    if (popularmoviesloading) return <p>Loading popular movies...</p>;
     if (popularmovieshasErrors) return <p>Unable to display movies.</p>;
     // console.log(popularmovies.results);
 
@@ -121,13 +130,13 @@ const MoviesPage = ({
         },
       },
       {
-        breakpoint: 1024,
+        breakpoint: 992,
         settings: {
           arrows: false,
           dots: false,
           infinite: true,
           speed: 500,
-          slidesToShow: 5,
+          slidesToShow: 3,
           slidesToScroll: 2,
         },
       },
@@ -146,118 +155,124 @@ const MoviesPage = ({
   };
 
   return (
-    <div className="movies-container">
-      <div className="popular-movies-container">
-        <h3 className="movie-header">
-          Popular
-          <span className="see-more">
-            <a href="/popularmovies/">
-              <small>{`See more >`}</small>
-            </a>
-          </span>
-        </h3>
-        <div className="controls">
-          <button
-            onClick={sliderRef?.slickPrev}
-            className="sliderBtn prevButton"
-          >
-            <FaChevronLeft />
-          </button>
-          <button
-            onClick={sliderRef?.slickNext}
-            className="sliderBtn nextButton"
-          >
-            <FaChevronRight />
-          </button>
-        </div>
-        <Slider ref={setSliderRef} {...settings}>
-          {renderPopularMovies()}
-        </Slider>
-      </div>
+    <div className="container">
+      {isLoading ? (
+        <LoadingPage />
+      ) : (
+        <div className="movies-container">
+          <div className="popular-movies-container">
+            <h3 className="movie-header">
+              Popular
+              <span className="see-more">
+                <a href="/popularmovies/">
+                  <small>{`See more >`}</small>
+                </a>
+              </span>
+            </h3>
+            <div className="controls">
+              <button
+                onClick={sliderRef?.slickPrev}
+                className="sliderBtn prevButton"
+              >
+                <FaChevronLeft />
+              </button>
+              <button
+                onClick={sliderRef?.slickNext}
+                className="sliderBtn nextButton"
+              >
+                <FaChevronRight />
+              </button>
+            </div>
+            <Slider ref={setSliderRef} {...settings}>
+              {renderPopularMovies()}
+            </Slider>
+          </div>
 
-      <div className="toprated-movies-container">
-        <h3 className="movie-header">
-          Top Rated
-          <span className="see-more">
-            <a href="/topratedmovies/">
-              <small>{`See more >`}</small>
-            </a>
-          </span>
-        </h3>
-        <div className="controls">
-          <button
-            onClick={trmSliderRef?.slickPrev}
-            className="sliderBtn prevButton"
-          >
-            <FaChevronLeft />
-          </button>
-          <button
-            onClick={trmSliderRef?.slickNext}
-            className="sliderBtn nextButton"
-          >
-            <FaChevronRight />
-          </button>
-        </div>
-        <Slider ref={setTrmSliderRef} {...settings}>
-          {renderTopratedMovies()}
-        </Slider>
-      </div>
+          <div className="toprated-movies-container">
+            <h3 className="movie-header">
+              Top Rated
+              <span className="see-more">
+                <a href="/topratedmovies/">
+                  <small>{`See more >`}</small>
+                </a>
+              </span>
+            </h3>
+            <div className="controls">
+              <button
+                onClick={trmSliderRef?.slickPrev}
+                className="sliderBtn prevButton"
+              >
+                <FaChevronLeft />
+              </button>
+              <button
+                onClick={trmSliderRef?.slickNext}
+                className="sliderBtn nextButton"
+              >
+                <FaChevronRight />
+              </button>
+            </div>
+            <Slider ref={setTrmSliderRef} {...settings}>
+              {renderTopratedMovies()}
+            </Slider>
+          </div>
 
-      <div className="nowplaying-movies-container">
-        <h3 className="movie-header">
-          Now Playing
-          <span className="see-more">
-            <a href="/nowplayingmovies/">
-              <small>{`See more >`}</small>
-            </a>
-          </span>
-        </h3>
-        <div className="controls">
-          <button
-            onClick={nowplayingSliderRef?.slickPrev}
-            className="sliderBtn prevButton"
-          >
-            <FaChevronLeft />
-          </button>
-          <button
-            onClick={nowplayingSliderRef?.slickNext}
-            className="sliderBtn nextButton"
-          >
-            <FaChevronRight />
-          </button>
-        </div>
-        <Slider ref={setNowplayingSliderRef} {...settings}>
-          {renderNowplayingMovies()}
-        </Slider>
-      </div>
+          <div className="nowplaying-movies-container">
+            <h3 className="movie-header">
+              Now Playing
+              <span className="see-more">
+                <a href="/nowplayingmovies/">
+                  <small>{`See more >`}</small>
+                </a>
+              </span>
+            </h3>
+            <div className="controls">
+              <button
+                onClick={nowplayingSliderRef?.slickPrev}
+                className="sliderBtn prevButton"
+              >
+                <FaChevronLeft />
+              </button>
+              <button
+                onClick={nowplayingSliderRef?.slickNext}
+                className="sliderBtn nextButton"
+              >
+                <FaChevronRight />
+              </button>
+            </div>
+            <Slider ref={setNowplayingSliderRef} {...settings}>
+              {renderNowplayingMovies()}
+            </Slider>
+          </div>
 
-      <div className="upcomingmovies-container">
-        <h3 className="movie-header">
-          Up Coming
-          <span className="see-more">
-            <a href="/upcomingmovies/">
-              <small>{`See more >`}</small>
-            </a>
-          </span>
-        </h3>
-        <div className="controls">
-          <button
-            onClick={upcomingSliderRef?.slickPrev}
-            className="sliderBtn prevButton"
-          >
-            <FaChevronLeft />
-          </button>
-          <button
-            onClick={upcomingSliderRef?.slickNext}
-            className="sliderBtn nextButton"
-          >
-            <FaChevronRight />
-          </button>
+          <div className="upcomingmovies-container">
+            <h3 className="movie-header">
+              Up Coming
+              <span className="see-more">
+                <a href="/upcomingmovies/">
+                  <small>{`See more >`}</small>
+                </a>
+              </span>
+            </h3>
+            <div className="controls">
+              <button
+                onClick={upcomingSliderRef?.slickPrev}
+                className="sliderBtn prevButton"
+              >
+                <FaChevronLeft />
+              </button>
+              <button
+                onClick={upcomingSliderRef?.slickNext}
+                className="sliderBtn nextButton"
+              >
+                <FaChevronRight />
+              </button>
+            </div>
+            <Slider ref={setUpcomingSliderRef} {...settings}>
+              {renderUpcomingMovies()}
+            </Slider>
+          </div>
         </div>
-        <Slider ref={setUpcomingSliderRef} {...settings}>
-          {renderUpcomingMovies()}
-        </Slider>
-      </div>
+      )}
     </div>
   );
 };

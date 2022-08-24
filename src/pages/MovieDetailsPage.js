@@ -49,7 +49,7 @@ export default function MovieDetailsPage() {
                 <a href="#" className="movie-trailer">
                   <span>
                     <i className="ri-play-fill"></i>
-                    <p>WATCH</p>
+                    <p>TRAILER</p>
                   </span>
                 </a>
               </div>

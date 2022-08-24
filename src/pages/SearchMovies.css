@@ -34,3 +34,21 @@ body {
 .active-page a {
   color: lightblue;
 }
+
+@media screen and (min-width: 992px) {
+  .search-movies-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .search-movies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  .search-movies-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
