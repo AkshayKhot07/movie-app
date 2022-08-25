@@ -11,7 +11,7 @@ export default function PopularMoviesPage() {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    (async () => {
+    const fetchPopularMovies = async () => {
       setFetching(true);
       const response = await fetch(
         `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${page}`
@@ -20,7 +20,8 @@ export default function PopularMoviesPage() {
       setFetching(false);
       setMovieDetails(data);
       console.log(data);
-    })();
+    };
+    fetchPopularMovies();
   }, [page]);
 
   function handleClick(e) {

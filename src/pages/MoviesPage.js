@@ -41,17 +41,28 @@ const MoviesPage = ({
   const [upcomingSliderRef, setUpcomingSliderRef] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 5000);
-  }, []);
+  // effect for inital screen loading
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 5000);
+  // }, []);
 
   useEffect(() => {
-    dispatch(fetchPopularMovies());
-    dispatch(fetchTopratedMovies());
-    dispatch(fetchNowplayingMovies());
-    dispatch(fetchUpcomingMovies());
+    Promise.all([
+      dispatch(fetchPopularMovies()),
+      dispatch(fetchTopratedMovies()),
+      dispatch(fetchNowplayingMovies()),
+      dispatch(fetchUpcomingMovies()),
+    ])
+      .then(() => {
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        if (error) {
+          setIsLoading(true);
+        }
+      });
   }, [dispatch]);
 
   const renderPopularMovies = () => {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { MovieCard } from "../components/MovieCard";
 import "./SearchMovies.css";
 
@@ -56,6 +56,7 @@ export default function SearchMovies() {
   const [booksAmount, setBooksAmount] = useState(null);
   const [searchQuery, setSearchQuery] = useState(null);
   const prevQueryRef = useRef();
+  const navigation = useNavigate();
 
   //search query
   const queryString = useLocation().search;
